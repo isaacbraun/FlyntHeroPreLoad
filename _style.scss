@@ -1,0 +1,101 @@
+// Southern Hero V1
+// _style.scss
+
+[is='hero-v1-preload'] {
+    .hero-component {
+        background-color: #15582d;
+        position: relative;
+        max-height: 500px;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        &:after {
+            content: '';
+                width: 100%;
+                height: 100%;
+                background: url(https://sau-assets.s3.amazonaws.com/framework/img/bg-diamonds-white.png) right top no-repeat;
+                background-size: 50%;
+                position: absolute;
+        }
+
+        @media (max-width: 900px) {
+            margin: 0 auto 30px auto;
+            min-height: 250px;
+
+            img {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            min-height: 200px;
+
+            &:after {
+                background-size: 70%;
+            }
+        }
+
+        &-text {
+            position: absolute;
+            left: -30px;
+            bottom: 45px;
+            padding: 20px;
+            background-color: #ced54a;
+            z-index: 1;
+
+            h1 {
+                margin: 0 0 0 0;
+                padding: 0 15px 0 60px;
+                font-size: 2em;
+                color: #15582d;
+            }
+
+            &:after {
+                content: '';
+                width: 0;
+                height: 0;
+                border-bottom: 21px solid transparent;
+                border-left: 31px solid transparent;
+                border-right: 31px solid #15582d;
+                position: absolute;
+                bottom: -21px;
+                left: -32px;
+            }
+
+            @media (max-width: 600px) {
+                max-width: 100%;
+
+                h1 {
+                    font-size: 1.8em;
+                    padding: 0 15px 0 30px;
+                }
+            }
+
+            @media (max-width: 400px) {
+                width: 100%;
+                height: 100%;
+                top: 0;
+                right: 0;
+                left: 0;
+                background-color: rgba(21, 88, 45, 0.6);
+                display: flex;
+                align-items: center;
+                padding: 0 10px;
+                box-sizing: border-box;
+
+                h1 {
+                    font-weight: 300;
+                    color: #fff;
+                }
+
+                &:after {
+                    border: none;
+                }
+            }
+        }
+    }
+    
+}
